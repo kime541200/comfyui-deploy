@@ -1,0 +1,7 @@
+# 通用 workflow 組合（原 default）。
+extends: base
+nodes:
+  - ControlAltAI-Nodes
+  - ComfyUI-KJNodes
+  - ComfyUI-Inpaint-CropAndStitch
+  - efficiency-nodes-comfyui

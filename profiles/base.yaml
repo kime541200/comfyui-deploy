@@ -1,0 +1,6 @@
+# 所有 profile 共用的基底：只放幾乎每個 workflow 都會用到的 node。
+nodes:
+  - ComfyUI-Manager
+  - ComfyUI-Lora-Manager
+  - ComfyUI-GGUF
+  - rgthree-comfy

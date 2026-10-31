@@ -1,11 +1,10 @@
 source: https://civitai.red/models/1847730/smooth-workflow-wan-22-i2vt2vfirst2last-framemmaudio
 tasks: I2V / T2V / first2last frame / MMAudio
+extends: base
 nodes:
-  - ComfyUI-Manager
   - comfyui-adaptiveprompts
   - ComfyUI-NAG
   - comfy_mtb
-  - rgthree-comfy
   - ComfyUI-MMAudio
   - ComfyUI-WanVideoWrapper
   - ComfyUI-VideoHelperSuite
@@ -13,5 +12,4 @@ nodes:
   - ComfyUI-KJNodes
   - ComfyUI-Easy-Use
   - ComfyUI_Comfyroll_CustomNodes
-  - ComfyUI-GGUF
   - ComfyUI-mxToolkit

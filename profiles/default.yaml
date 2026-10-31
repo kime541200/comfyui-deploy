@@ -1,9 +1,3 @@
-nodes:
-  - ComfyUI-Manager
-  - ComfyUI-GGUF
-  - rgthree-comfy
-  - ControlAltAI-Nodes
-  - ComfyUI-KJNodes
-  - ComfyUI-Lora-Manager
-  - ComfyUI-Inpaint-CropAndStitch
-  - efficiency-nodes-comfyui
+# 預設 image：只有基底 node。
+extends: base
+nodes: []

@@ -18,10 +18,10 @@ x-comfyui: &comfyui
   command: ["python", "main.py", "--listen", "0.0.0.0", "--port", "8188"]
   deploy: *comfyui-gpu-mount
 
-# 每個 service 對應 profiles/<PROFILE>.yaml。
+# 單一 service，以 PROFILE 環境變數選擇 profiles/<PROFILE>.yaml（預設 default）。
 # 同一時間只啟動一個（共用 port 8188 與 GPU）：
-#   docker compose up -d                       # default
-#   docker compose up -d comfyui-wan-smooth    # 其他 profile 以 service 名稱啟動
+#   docker compose up -d --build                      # default（只有 base node）
+#   PROFILE=wan-smooth docker compose up -d --build   # 其他 profile
 services:
   comfyui:
     <<: *comfyui
@@ -29,19 +29,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
       args:
-        PROFILE: default
-    image: comfyui:latest
+        PROFILE: ${PROFILE:-default}
+    image: comfyui:${PROFILE:-default}
     container_name: comfyui
     restart: unless-stopped
-
-  comfyui-wan-smooth:
-    <<: *comfyui
-    profiles: [wan-smooth]
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-      args:
-        PROFILE: wan-smooth
-    image: comfyui-wan-smooth:latest
-    container_name: comfyui-wan-smooth
-    restart: "no"

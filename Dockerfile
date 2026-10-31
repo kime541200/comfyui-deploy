@@ -28,9 +28,11 @@ RUN git clone --depth 1 https://github.com/Comfy-Org/ComfyUI.git
 # 安裝 ComfyUI 基礎依賴
 RUN pip install --no-cache-dir -r /app/ComfyUI/requirements.txt
 
-# 依 profile 安裝 custom node（名稱與 repo 對照見 nodes.yaml）
+# 依 profile 安裝 custom node（名稱與 repo 對照見 nodes.yaml）。
+# base 獨立成一層：切換 profile 時共用此 layer 的快取。
 COPY nodes.yaml install_custom_nodes.py /app/
 COPY profiles/ /app/profiles/
+RUN python /app/install_custom_nodes.py base
 RUN python /app/install_custom_nodes.py ${PROFILE} && \
     rm -rf /app/nodes.yaml /app/install_custom_nodes.py /app/profiles
 
