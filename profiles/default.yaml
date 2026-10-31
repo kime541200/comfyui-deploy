@@ -1,0 +1,9 @@
+nodes:
+  - ComfyUI-Manager
+  - ComfyUI-GGUF
+  - rgthree-comfy
+  - ControlAltAI-Nodes
+  - ComfyUI-KJNodes
+  - ComfyUI-Lora-Manager
+  - ComfyUI-Inpaint-CropAndStitch
+  - efficiency-nodes-comfyui

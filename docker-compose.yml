@@ -1,0 +1,47 @@
+x-common-gpu: &comfyui-gpu-mount
+  resources:
+    reservations:
+      devices:
+        - driver: nvidia
+          capabilities: ["gpu"]
+          device_ids: ["0"]
+
+x-comfyui: &comfyui
+  shm_size: 8gb
+  ports:
+    - "8188:8188"
+  volumes:
+    - /data/comfyui/models:/app/ComfyUI/models
+    - /data/comfyui/input:/app/ComfyUI/input
+    - /data/comfyui/output:/app/ComfyUI/output
+    - /data/comfyui/workflows:/app/ComfyUI/user/default/workflows
+  command: ["python", "main.py", "--listen", "0.0.0.0", "--port", "8188"]
+  deploy: *comfyui-gpu-mount
+
+# 每個 service 對應 profiles/<PROFILE>.yaml。
+# 同一時間只啟動一個（共用 port 8188 與 GPU）：
+#   docker compose up -d                       # default
+#   docker compose up -d comfyui-wan-smooth    # 其他 profile 以 service 名稱啟動
+services:
+  comfyui:
+    <<: *comfyui
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        PROFILE: default
+    image: comfyui:latest
+    container_name: comfyui
+    restart: unless-stopped
+
+  comfyui-wan-smooth:
+    <<: *comfyui
+    profiles: [wan-smooth]
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        PROFILE: wan-smooth
+    image: comfyui-wan-smooth:latest
+    container_name: comfyui-wan-smooth
+    restart: "no"

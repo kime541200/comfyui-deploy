@@ -1,0 +1,20 @@
+# Custom node 目錄：name -> git repo。Profile（profiles/*.yaml）以 name 引用。
+# 新增 node 只需在此加一筆，不必改安裝腳本。
+ComfyUI-Manager: https://github.com/Comfy-Org/ComfyUI-Manager.git
+ComfyUI-GGUF: https://github.com/city96/ComfyUI-GGUF.git
+rgthree-comfy: https://github.com/rgthree/rgthree-comfy.git
+ControlAltAI-Nodes: https://github.com/gseth/ControlAltAI-Nodes.git
+ComfyUI-KJNodes: https://github.com/kijai/ComfyUI-KJNodes.git
+ComfyUI-Lora-Manager: https://github.com/willmiao/ComfyUI-Lora-Manager.git
+ComfyUI-Inpaint-CropAndStitch: https://github.com/lquesada/ComfyUI-Inpaint-CropAndStitch.git
+efficiency-nodes-comfyui: https://github.com/jags111/efficiency-nodes-comfyui.git
+comfyui-adaptiveprompts: https://github.com/Alectriciti/comfyui-adaptiveprompts.git
+ComfyUI-NAG: https://github.com/scottmudge/ComfyUI-NAG.git
+comfy_mtb: https://github.com/melMass/comfy_mtb.git
+ComfyUI-MMAudio: https://github.com/kijai/ComfyUI-MMAudio.git
+ComfyUI-WanVideoWrapper: https://github.com/kijai/ComfyUI-WanVideoWrapper.git
+ComfyUI-VideoHelperSuite: https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git
+ComfyUI-VFI: https://github.com/GACLove/ComfyUI-VFI.git
+ComfyUI-Easy-Use: https://github.com/yolain/ComfyUI-Easy-Use.git
+ComfyUI_Comfyroll_CustomNodes: https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git
+ComfyUI-mxToolkit: https://github.com/Smirnov75/ComfyUI-mxToolkit.git
