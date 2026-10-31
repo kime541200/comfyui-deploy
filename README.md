@@ -11,4 +11,4 @@ docker exec comfyui ls /app/ComfyUI/custom_nodes  # 查看已裝 node
 curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:8188/system_stats   # 預期 200
 ```
 
-若 8188 被佔用：`docker compose down --remove-orphans`。Agent 操作請見 `comfyui-agent`。
+若 8188 被佔用：`docker compose down --remove-orphans`。Agent 操作請見 [kime541200/comfyui-agent](https://github.com/kime541200/comfyui-agent)。

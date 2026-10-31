@@ -1,6 +1,6 @@
 # comfyui-deploy
 
-以 Docker（GPU）佈署 ComfyUI。Agent 如何操作容器內的 ComfyUI 屬於 `comfyui-agent`，不在此處理。
+以 Docker（GPU）佈署 ComfyUI。Agent 如何操作容器內的 ComfyUI 屬於 [kime541200/comfyui-agent](https://github.com/kime541200/comfyui-agent)，不在此處理。
 
 - 容器：`docker-compose.yml` 單一 service，以 `PROFILE` 選擇要建置的 profile，同一時間只啟動一個（共用 port 8188 與 GPU）。
 - Profile 與 node 管理（`nodes.yaml`、`profiles/`、base 的取捨）：新增或調整 node 前先讀 `docs/profiles.md`。
