@@ -1,5 +1,5 @@
 # 供 https://github.com/kime541200/ai-pose-gallery-zh 與 https://github.com/kime541200/ai-pose-gallery-mcp 的 Qwen-Image-Edit-2509 多圖角色合成工作流使用
-# （以 DepthAnythingV2 -> DWPose 將白模姿勢圖轉為 OpenPose 關鍵點骨架）
+# （以 DepthAnythingV2 將白模姿勢圖轉為 3D 深度輪廓圖）
 tasks: Multi-image character synthesis (portrait + costume + pose)
 extends: base
 nodes:
