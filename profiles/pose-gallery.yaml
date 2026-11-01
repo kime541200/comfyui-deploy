@@ -1,5 +1,17 @@
-# 供 https://github.com/kime541200/ai-pose-gallery-zh 與 https://github.com/kime541200/ai-pose-gallery-mcp 的 FLUX 3 Image Klein Distilled（預設）與 Qwen-Image-Edit-2509（備選）多圖角色合成工作流使用
-# （以 DepthAnythingV2 將白模姿勢圖轉為 3D 深度輪廓圖）
+# 供 https://github.com/kime541200/ai-pose-gallery-zh 與 https://github.com/kime541200/ai-pose-gallery-mcp 的
+# FLUX 3 Image Klein Distilled（預設）與 Qwen-Image-Edit-2509（備選）多圖角色合成工作流使用
+# （以 DepthAnythingV2 將白模姿勢圖轉為 3D 深度輪廓圖；首次執行會自動下載 depth_anything_v2_vitl.pth）
+#
+# 預設工作流（FLUX 3 Image Klein Distilled Int8）需於 ComfyUI models/ 下準備以下 3 個檔案（共約 10.27 GB）：
+#   1. diffusion_models/flux3-image-klein-int8-convrot.safetensors (5.43 GB)
+#      https://huggingface.co/ml-resources/flux-3-image-klein-comfy/resolve/main/diffusion_models/flux3-image-klein-int8-convrot.safetensors
+#   2. text_encoders/qwen3vl_4b_int8_convrot.safetensors (4.52 GB)
+#      https://huggingface.co/ml-resources/flux-3-image-klein-comfy/resolve/main/text_encoders/qwen3vl_4b_int8_convrot.safetensors
+#   3. vae/flux2-vae.safetensors (0.32 GB)
+#      https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/vae/flux2-vae.safetensors
+#
+# 備選工作流（Qwen-Image-Edit-2509）與完整說明見：
+#   https://github.com/kime541200/ai-pose-gallery-zh/blob/main/docs/comfyui.md
 tasks: Multi-image character synthesis (portrait + costume + pose)
 extends: base
 nodes:

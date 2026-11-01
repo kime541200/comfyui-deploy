@@ -9,12 +9,12 @@ x-common-gpu: &comfyui-gpu-mount
 x-comfyui: &comfyui
   shm_size: 8gb
   ports:
-    - "8188:8188"
+    - "${PORT:-8188}:8188"
   volumes:
-    - /data/comfyui/models:/app/ComfyUI/models
-    - /data/comfyui/input:/app/ComfyUI/input
-    - /data/comfyui/output:/app/ComfyUI/output
-    - /data/comfyui/workflows:/app/ComfyUI/user/default/workflows
+    - ${COMFYUI_DATA_DIR:-/data/comfyui}/models:/app/ComfyUI/models
+    - ${COMFYUI_DATA_DIR:-/data/comfyui}/input:/app/ComfyUI/input
+    - ${COMFYUI_DATA_DIR:-/data/comfyui}/output:/app/ComfyUI/output
+    - ${COMFYUI_DATA_DIR:-/data/comfyui}/workflows:/app/ComfyUI/user/default/workflows
   command: ["python", "main.py", "--listen", "0.0.0.0", "--port", "8188"]
   deploy: *comfyui-gpu-mount
 
